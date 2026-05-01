@@ -38,7 +38,11 @@ function handleSubmit(event) {
         }
       })
       .catch(error => {
-        console.log('error:', error);
+        iziToast.error({
+          message: error.message,
+          position: 'topLeft',
+          timeout: 8000,
+        });
       })
       .finally(() => {
         hideLoader();
